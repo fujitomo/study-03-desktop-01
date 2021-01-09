@@ -1,0 +1,15 @@
+.item-label {
+    display: block;
+    float: left;
+    width: 120px;
+}
+
+.serach-result {
+    width: 373px;
+    height: 400px;
+    resize: none;
+}
+
+.serch-button{
+    width: 50px;
+}

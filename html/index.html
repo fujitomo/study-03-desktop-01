@@ -1,19 +1,26 @@
 <html>
-    <head>
-        <title>eelテスト</title>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <h2>eelテスト</h2>
-        <script type="text/javascript" src="./eel.js"></script>
-        <script>
-            search.addEventListener('click', () => {
+<head>
+    <title>検索くん</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>検索くん</h2>
+<p class="item">
+      <label class="item-label" for="file_name">CSVファイル名</label>
+    　<input type=" text" name="file_name" id="file_name" />
+</p>
+<p class="item">
+      <label class="item-label" for="search">検索ワード</label>
+    　<input type=" text" name="search_value" id="search_value" />
+    　<input class="serch-button" id="search" type="submit" value="検索" />
+</p>
 
-            })
+<textarea id="serach_result" class="serach-result">
 
-            eel.expose(view_log_js)
-            function view_log_js(text){
-            }
-        </script>
-    </body>
+</textarea>
+
+<script type="text/javascript" src="./eel.js"></script>
+<script type="text/javascript" src="event.js"></script>
+
+</body>
 </html>
