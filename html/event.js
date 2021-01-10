@@ -13,17 +13,19 @@
             return;
         }
         kimetsu_search(file_name.value,search_value.value);
+        return
     })
 
-    //eel.expose(view_log_js);
+    eel.expose(view_log_js);
 
-    //function view_log_js(text) {
-    //}
+    // Python処理から呼び出す
+    function view_log_js(log) {
+        console.log(log);
+        document.getElementById('serach_result').value += log + "\n";
+    }
 
-    // Python側メソッド呼び出し
+    // Python側メソッドを呼び出す
     async function kimetsu_search(file_name,search_value) {
-        let result = await eel.kimetsu_search(file_name,search_value)();
-        console.log(result);
-        document.getElementById('serach_result').value += result + "\n";
+        await eel.kimetsu_search(file_name,search_value)();
         return result;
     }

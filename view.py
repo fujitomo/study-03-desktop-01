@@ -10,7 +10,7 @@ size = (700, 600)
 @eel.expose
 def kimetsu_search(filename, search_value):
     """
-    引数filenameにsearch_value値があるか検索して、結果を返す（javascript連携用）
+    引数filenameにsearch_value値があるか検索して、ログ出力する
 
     Parameters
     ----------
@@ -18,14 +18,10 @@ def kimetsu_search(filename, search_value):
         検索対象のファイル名。
     search_value : string
         検索対象の文字列。
-
-    Returns
-    -------
-    kimetsu_search : string
-        検索結果。
     """
     result = search.kimetsu_search(filename, search_value)
-    return result
+    # javascript処理を呼び出す
+    eel.view_log_js(result)
 
 
 desktop.start(app_name, end_point, size)
